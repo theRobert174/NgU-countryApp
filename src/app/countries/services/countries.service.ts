@@ -31,4 +31,11 @@ export class CountriesService {
       catchError(() => of([]))
     );
   }
+
+  searchCountryByAlphaCode(term: string) {
+    return this.http.get<Country[]>(`${this.apiUrl}/alpha/${term}`)
+    .pipe(
+      catchError(() => of([]))
+    );
+  }
 }
