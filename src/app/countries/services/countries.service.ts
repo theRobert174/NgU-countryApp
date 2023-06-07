@@ -17,4 +17,18 @@ export class CountriesService {
       catchError(() => of([]))
     );
   }
+
+  searchCountry(term: string) {
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${term}`)
+    .pipe(
+      catchError(() => of([]))
+    );
+  }
+
+  searchRegion(term: string) {
+    return this.http.get<Country[]>(`${this.apiUrl}/region/${term}`)
+    .pipe(
+      catchError(() => of([]))
+    );
+  }
 }
