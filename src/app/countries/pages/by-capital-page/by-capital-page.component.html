@@ -3,11 +3,16 @@
 
 <div class="row">
   <div class="col">
-    <shared-search-box placeholder="Mira" (onValue)="searchByCapital($event)"></shared-search-box>
+    <shared-search-box placeholder="Search by capital" (onValue)="searchByCapital($event)"></shared-search-box>
   </div>
 </div>
 <div class="row">
   <div class="col">
-    Results Table
+    <hr>
+    <ul>
+      <li *ngFor="let country of countries">
+        {{ country.capital }} - {{ country.population}}
+      </li>
+    </ul>
   </div>
 </div>
